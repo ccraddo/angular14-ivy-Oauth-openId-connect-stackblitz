@@ -19,9 +19,10 @@ export class GoogleApiService {
       oAuthService.tryLoginImplicitFlow().then(() => {
         console.log('tryLoginImplicitFlow');
         if (!oAuthService.hasValidAccessToken) {
-          console.log('hasValidAccessToken');
+          console.log('HAS NO ValidAccessToken');
           oAuthService.initLoginFlow();
         } else {
+          console.log('hasValidAccessToken');
           oAuthService.loadUserProfile().then((userProfile) => {
             console.log(JSON.stringify(userProfile));
           });
