@@ -9,7 +9,7 @@ const oAuthConfig: AuthConfig = {
     '551875752318-cilvt74ecqd9k9get4j0tst1buhai967.apps.googleusercontent.com',
   scope: 'openid profile email',
 };
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class GoogleApiService {
   constructor(private readonly oAuthService: OAuthService) {
     console.log('constructor');
