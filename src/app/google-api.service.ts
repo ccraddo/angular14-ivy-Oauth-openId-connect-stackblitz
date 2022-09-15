@@ -12,11 +12,14 @@ const oAuthConfig: AuthConfig = {
 @Injectable({ providedIn: 'root' })
 export class GoogleApiService {
   constructor(private readonly oAuthService: OAuthService) {
-    console.log('constructor');
+    console.log('constructor ' + JSON.stringify(oAuthConfig));
     oAuthService.configure(oAuthConfig);
     oAuthService.loadDiscoveryDocument().then(() => {
+      console.log('loadDiscoveryDocument');
       oAuthService.tryLoginImplicitFlow().then(() => {
+        console.log('tryLoginImplicitFlow');
         if (!oAuthService.hasValidAccessToken) {
+          console.log('hasValidAccessToken');
           oAuthService.initLoginFlow();
         } else {
           oAuthService.loadUserProfile().then((userProfile) => {
