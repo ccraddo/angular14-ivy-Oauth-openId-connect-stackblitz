@@ -5,12 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { GoogleApiService } from './google-api.service';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule,
-  OAuthModule.forRoot()],
-
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    OAuthModule.forRoot(),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
