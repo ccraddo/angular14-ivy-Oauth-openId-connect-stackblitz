@@ -23,7 +23,7 @@ export class GoogleApiService {
           oAuthService.initLoginFlow();
         } else {
           console.log(
-            'hasValidAccessToken' + oAuthService.hasValidAccessToken()
+            'hasValidAccessToken => ' + oAuthService.hasValidAccessToken()
           );
           oAuthService.loadUserProfile().then((userProfile) => {
             console.log(JSON.stringify(userProfile));
