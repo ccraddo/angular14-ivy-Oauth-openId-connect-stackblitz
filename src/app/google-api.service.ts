@@ -12,6 +12,7 @@ const oAuthConfig: AuthConfig = {
 @Injectable()
 export class GoogleApiService {
   constructor(private readonly oAuthService: OAuthService) {
+    console.log('constructor');
     oAuthService.configure(oAuthConfig);
     oAuthService.loadDiscoveryDocument().then(() => {
       oAuthService.tryLoginImplicitFlow().then(() => {
